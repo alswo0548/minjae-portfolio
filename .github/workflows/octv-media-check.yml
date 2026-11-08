@@ -1,24 +1,43 @@
-name: Inspect OCTV and reference demo media
+name: Improve OCTV demo motion and interaction guides
 on:
   push:
-    branches: [feat/octv-motion-demos-20261108]
+    branches:
+      - feat/octv-motion-demos-20261108
     paths:
       - '.github/workflows/octv-media-check.yml'
-  workflow_dispatch:
+
 permissions:
-  contents: read
+  contents: write
+
 jobs:
-  inspect:
+  encode:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - name: Install media probe
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
-      - name: Print source media specifications
+        with:
+          persist-credentials: true
+      - name: Install video tools and image renderer
         run: |
-          for f in assets/01-octv/demo_*.mp4 assets/02-gooddeedquest/*.mp4 assets/03-climbing-web/*.mp4; do
-            echo "===== $f ====="
-            ffprobe -v error -select_streams v:0 -show_entries stream=width,height,r_frame_rate,avg_frame_rate,nb_frames,bit_rate,codec_name -show_entries format=duration,size,bit_rate -of default=noprint_wrappers=1 "$f"
-            echo "EARLY_FRAME_HASHES:"
-            ffmpeg -hide_banner -v error -ss 0 -t 3 -i "$f" -vf "fps=1,scale=160:110" -f framemd5 - | tail -4
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python -m pip install -q 'Pillow==11.3.0'
+      - name: Verify untouched source and build enhanced footage
+        run: |
+          set -e
+          for f in assets/01-octv/demo_cctv.mp4 assets/01-octv/demo_overview.mp4 assets/01-octv/demo_analysis.mp4 assets/01-octv/demo_routes.mp4; do
+            test -s "$f"
           done
+          python scripts/improve_octv_guided_demos.py
+      - name: Commit only edited demonstration videos and existing HTML
+        run: |
+          set -e
+          git config user.name "alswo0548"
+          git config user.email "alswo0548@gmail.com"
+          git add assets/01-octv/demo_cctv.mp4 assets/01-octv/demo_overview.mp4 assets/01-octv/demo_analysis.mp4 assets/01-octv/demo_routes.mp4 octv.html
+          git rm -f .github/workflows/octv-media-check.yml scripts/improve_octv_guided_demos.py
+          test ! -f .github/workflows/octv-media-check.yml
+          test ! -f scripts/improve_octv_guided_demos.py
+          git diff --cached --stat
+          git commit -m "feat: align OCTV demonstrations to 30fps with guided cursor"
+          git push origin HEAD:feat/octv-motion-demos-20261108
