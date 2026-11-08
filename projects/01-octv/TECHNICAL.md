@@ -4,7 +4,7 @@
 
 `KDT 최종 프로젝트` · `2인 팀 · 팀장 이민재` · `2026.09 ~ 2026.11.03` · `최종 발표 완료`
 
-[← 소개와 실제 시연](README.md) · [포트폴리오 목록](../../README.md) · [소스코드 — 비공개·권한 필요](https://github.com/alswo0548/octv)
+[← 소개와 실제 시연](README.md) · [포트폴리오 목록](../../README.md) · [소스코드](https://github.com/alswo0548/octv)
 
 ### 목차
 
