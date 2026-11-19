@@ -1,3 +1,78 @@
-<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>탐정의 마을 · 기획·설계</title><style>
-html{scrollbar-width:none}*{box-sizing:border-box}body{margin:0 17px;background:#090c10;color:#f4f7fa;font-family:Inter,Pretendard,'Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif}.site{max-width:1630px;margin:auto;padding:6px 18px}.card{background:linear-gradient(118deg,#0b1118,#0e1a23 62%,#0d141c);border:1px solid #435261;border-radius:18px;padding:14px 18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:center}.status{font-size:12px;color:#a9eafb;font-weight:700}.card h1{margin:5px 0;font-size:25px}.card p{margin:6px 0;color:#c1cbd3;font-size:14px;line-height:1.55}.card a{display:inline-block;border:1px solid #7b91a1;border-radius:10px;color:#c7f0ff;text-decoration:none;padding:7px 13px;font-size:13px;margin-top:5px}.card img{display:block;width:100%;max-height:245px;object-fit:contain}.card figure{margin:0}.card figcaption{text-align:center;font-size:11px;color:#c1cbd3;margin-top:3px}@media(max-width:794px){.site{padding:8px 8px 10px}.card{padding:10px 9px;gap:8px;grid-template-columns:1fr 1fr}.card h1{font-size:18px}.card p{font-size:11px}.status,.card figcaption{font-size:10px}.card a{font-size:11px}}
-</style><main class="site"><article class="card"><div><div class="status">SOLO SIDE PROJECT · IN PROGRESS</div><h1>Detective Village</h1><strong>탐정의 마을 · 개발 진행 중</strong><p>실제 소비 데이터를 바탕으로 2.5D 마을 주민들의 외형과 일상이 변화하고, 탐정이 지출·예산을 관리하는 게임형 Android 가계부.</p><p>현재 단계 · 기획·설계<br>확정 · Android / 2.5D<br>도입 예정 · Kotlin / Room / Godot 4 / GDScript</p><a href="https://app.notion.com/p/41d070614e008181b623d3810b7f44ce" target="_blank" rel="noopener">기획·개발 기록 보기 ↗</a></div><figure><img src="assets/portfolio-covers/detective-village.png" width="1200" style="height:auto" alt="목표 13만 원과 지출 18만 원의 예산 편차 예시"><figcaption>기획 이미지 · 일별 예산 편차</figcaption></figure></article></main></html>
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>탐정의 마을 · 기획·설계</title>
+<style>
+:root{color-scheme:dark;--bg:#090c10;--card:#0e141b;--edge:#34424e;--text:#f4f7fa;--muted:#a5afba;--blue:#77daf7}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);font-family:Inter,Pretendard,'Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;color:var(--text)}
+body{min-width:320px}.site{max-width:1630px;margin:0 auto;padding:14px 33px 30px}
+.hero{position:relative;padding:0 156px 17px 0;min-height:150px;border-bottom:1px solid #3e454c}
+.eyebrow{font-size:clamp(24px,3vw,43px);font-weight:780;letter-spacing:-1.7px;margin:0 0 16px;line-height:1.25}
+.tagline{font-size:clamp(19px,2vw,28px);font-weight:760;margin:0 0 12px;letter-spacing:-.7px}
+.intro{font-size:clamp(13px,1.3vw,19px);line-height:1.5;margin:0 0 11px;color:#cdd2d8}
+.navlinks{display:flex;gap:13px;align-items:center;color:#d7d9db;font-size:17px}.navlinks a,.mini-link{color:#e1e5e9;text-decoration:underline;text-underline-offset:3px}
+.navlinks a:hover,.mini-link:hover{color:var(--blue)}
+.photo{position:absolute;right:0;top:0;width:118px;height:142px;border-radius:17px;border:1px solid #7b8288;background:linear-gradient(150deg,#2f3136,#171b20);display:flex;align-items:center;justify-content:center}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center center;border-radius:16px;}
+.about{border-bottom:1px solid #3e454c;display:flex;align-items:center;gap:26px;min-height:61px}
+.about h2{font-size:23px;margin:0;min-width:168px;letter-spacing:-.4px}.about p{border-left:1px solid #4f5760;padding-left:26px;margin:0;color:#b5bcc4;font-size:16px;line-height:1.7}
+.featured{font-size:27px;font-weight:770;margin:20px 0 17px;letter-spacing:-.6px}
+.card{background:linear-gradient(118deg,#0b1118 0%,#0e1a23 62%,#0d141c 100%);border:1px solid #435261;border-radius:18px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.12)}
+.primary{display:grid;grid-template-columns:29% 46% 25%;min-height:331px;padding:14px 15px 14px 25px;align-items:center;gap:11px}
+.maincopy{padding:5px 6px 0 0;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.projectheading{display:flex;align-items:center;gap:13px;margin-bottom:17px;flex-wrap:wrap}.projectheading strong{font-size:28px;letter-spacing:-.4px}
+.tag{font-size:13px;letter-spacing:.1px;color:#a9eafb;background:#103441;border:1px solid #23617b;border-radius:18px;padding:5px 12px;font-weight:700;white-space:nowrap}
+.subtitle{font-size:17px;font-weight:730;line-height:1.45;margin:0 0 11px}.flow{font-size:14px;line-height:1.7;color:#b4bdc5;margin:0 0 30px}
+.meta{font-size:14px;line-height:1.65;color:#d5dde5;margin:0 0 6px}.meta.muted{color:#b8c2cc}.meta svg{vertical-align:-4px;margin-right:7px}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 18px;border:1px solid #7b91a1;border-radius:11px;color:#c7f0ff;text-decoration:none;font-weight:680;font-size:15px;background:rgba(7,16,24,.7);margin-top:20px;width:max-content;transition:background .2s,border-color .2s}
+.button:hover{background:#173747;border-color:#8ddcf0}.button:focus-visible,.card:focus-within{outline:2px solid #5ac2de;outline-offset:2px}
+.desk{border:1px solid #667a86;border-radius:14px;height:302px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.35);background:#03060a}
+.desk img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}
+.phones{height:304px;display:flex;gap:12px;justify-content:center;align-items:stretch;overflow:hidden}
+.phone{position:relative;border:3px solid #7c858d;border-radius:25px;background:#03060a;width:calc(50% - 6px);max-width:152px;overflow:hidden;box-shadow:0 5px 15px #000a}
+.phone:before{content:"";position:absolute;z-index:4;left:50%;top:5px;transform:translateX(-50%);width:44px;height:12px;border-radius:8px;background:#03060b}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.phone:after{content:"";position:absolute;left:33%;right:33%;bottom:5px;height:3px;border-radius:5px;background:#d8e2e6;opacity:.7}
+.secondary{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:21px}
+.small{height:253px;display:grid;grid-template-columns:55% 45%;padding:18px 16px 14px 24px;gap:8px}
+.smallcopy{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;min-width:0}
+.small h3{font-size:26px;letter-spacing:-.65px;margin:0 0 12px;line-height:1.18;white-space:nowrap}
+.small h4{font-size:17px;margin:0 0 10px;line-height:1.4}.small p{color:#c0c9d2;font-size:16px;line-height:1.5;margin:0}.small .button{margin-top:10px;padding:9px 14px;font-size:14px}
+.smallvisual{align-self:stretch;display:flex;align-items:stretch;justify-content:flex-end;overflow:hidden;min-width:0}
+.smallvisual img{height:100%;width:100%;object-fit:contain;object-position:center right;border-radius:10px}
+.visuallyhidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:1140px){.site{padding:18px}.primary{grid-template-columns:32% 44% 24%;padding:16px;gap:8px}.projectheading strong{font-size:24px}.flow{margin-bottom:12px}.phones{gap:5px}.small h3{font-size:20px}.small h4{font-size:14px}.small p{font-size:13px}.small{grid-template-columns:55% 45%}}
+@media(max-width:760px){.site{padding:20px 12px}.hero{padding:0 95px 17px 0;min-height:140px}.photo{width:76px;height:102px;border-radius:12px}.eyebrow{font-size:25px;letter-spacing:-1px}.tagline{font-size:18px}.intro{font-size:13px}.navlinks{font-size:14px}.about{align-items:flex-start;gap:9px;padding:13px 0;min-height:0}.about h2{font-size:18px;min-width:98px}.about p{padding-left:9px;font-size:12px}.featured{font-size:23px}.primary{display:grid;grid-template-columns:1fr;gap:12px}.maincopy{padding:4px}.projectheading{margin-bottom:8px}.projectheading strong{font-size:26px}.flow{font-size:13px}.desk{height:auto;aspect-ratio:1.9}.phones{height:285px;gap:17px;justify-content:center}.phone{max-width:165px;width:43%}.maincopy .button{margin-top:10px}.secondary{grid-template-columns:1fr;gap:13px;margin-top:13px}.small{height:235px;grid-template-columns:54% 46%;padding:16px}.small h3{font-size:22px}.small p{font-size:14px}}
+@media(max-width:410px){.hero{padding-right:75px}.photo{width:68px;height:92px}.small h3{font-size:19px}.small h4{font-size:13px}.small p{font-size:12px}.small .button{font-size:12px;padding:7px}.desk{aspect-ratio:1.6}}
+
+html,body{height:auto;overflow-x:hidden;overflow-y:auto}
+.site{padding:10px 18px 10px;max-width:1630px}
+.card{box-shadow:none}
+@media(min-width:761px){
+.hero{min-height:112px;padding:0 110px 7px 0}.photo{height:106px;width:83px;border-radius:9px}.photo img{border-radius:8px}
+.tagline{font-size:24px;margin:0 0 6px}.intro{font-size:15px;margin:0 0 7px}.navlinks{font-size:14px}
+.about{min-height:43px;gap:15px}.about h2{font-size:19px;min-width:135px}.about p{font-size:13px;padding-left:15px}
+.featured{font-size:22px;margin:9px 0 11px}
+.primary{min-height:266px;padding:11px 13px 11px 18px}.projectheading{margin-bottom:6px}.projectheading strong{font-size:25px}
+.subtitle{font-size:15px}.flow{font-size:13px;margin:0 0 9px}.meta{font-size:13px;line-height:1.45}
+.maincopy .button{margin-top:8px;font-size:13px;padding:7px 13px}
+.desk{height:237px}.phones{height:241px;gap:6px}.phone{border-radius:16px}
+}
+@media(max-width:760px){
+.site{padding:8px 8px 10px}.hero{padding:0 82px 8px 0;min-height:105px}.photo{width:68px;height:87px}
+.tagline{font-size:16px;margin:0 0 5px}.intro{font-size:11px;margin:0 0 5px}.navlinks{font-size:11px}
+.about{gap:7px;padding:7px 0}.about h2{font-size:14px;min-width:72px}.about p{font-size:10px;padding-left:8px;line-height:1.4}
+.featured{font-size:16px;margin:8px 0 7px}
+.primary{display:grid;grid-template-columns:42% 58%;gap:6px;min-height:275px;padding:10px 9px}
+.maincopy{padding:0;justify-content:flex-start}.projectheading{margin-bottom:4px;gap:3px}.projectheading strong{font-size:18px}.tag{font-size:8px;padding:2px 5px}
+.subtitle{font-size:12px;margin:0 0 4px}.flow{font-size:10px;line-height:1.4;margin:0 0 7px}
+.meta{font-size:9px;line-height:1.4}.maincopy .button{font-size:10px;padding:5px;margin-top:6px;white-space:nowrap}
+.desk{height:246px;aspect-ratio:auto}.desk img{object-fit:cover;object-position:35% top}.phones{display:none}
+.secondary{display:grid;grid-template-columns:1fr;gap:11px;margin:0}
+.small{height:212px;grid-template-columns:51% 49%;padding:11px}.small h3{font-size:18px;margin-bottom:8px}
+.small h4{font-size:13px;margin-bottom:5px}.small p{font-size:11px}.small .button{font-size:10px;padding:6px 7px}
+}
+.concept{grid-column:2/-1;margin:0;min-width:0;text-align:center}.concept img{width:100%;max-height:218px;object-fit:contain;display:block}.concept figcaption{font-size:12px;color:var(--muted);margin-top:5px}@media(max-width:760px){.concept figcaption{font-size:10px}.projectheading strong{overflow-wrap:anywhere}}</style></head><body><main class="site"><section class="card primary" aria-label="탐정의 마을 프로젝트">
+<div class="maincopy"><div class="projectheading"><strong>02. Detective Village</strong><span class="tag">IN PROGRESS</span></div><p class="subtitle">탐정의 마을 · 게임형 Android 가계부</p><p class="flow">소비에 따라 2.5D 마을 시민의 외형과 일상이 달라지고 탐정이 지출과 예산을 관리합니다.</p><p class="meta">♧ &nbsp; SOLO SIDE PROJECT · 개발 진행 중 · 기획·설계</p><p class="meta muted">확정 · Android / 2.5D<br>도입 예정 · Kotlin / Room / Godot 4</p><a class="button" href="https://app.notion.com/p/41d070614e008181b623d3810b7f44ce" target="_blank" rel="noopener noreferrer">프로젝트 상세 보기 ↗</a></div>
+<figure class="concept"><img src="assets/portfolio-covers/detective-village.png" alt="기획 예시. 13일차 식비는 목표보다 5만 원 빠릅니다."><figcaption>기획 이미지 · 일별 예산 편차</figcaption></figure></section></main></body></html>
