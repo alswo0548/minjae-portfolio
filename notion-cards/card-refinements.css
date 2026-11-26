@@ -14,3 +14,11 @@
 @media(max-width:320px){.small{min-height:0;grid-template-columns:1fr}.smallvisual{height:135px}}
 
 .smallvisual .gdq img:first-child{object-position:right center}.smallvisual .gdq img:last-child{object-position:left center}
+/* Keep the detail link keyboard-accessible across the entire project card. */
+.card:is(.primary,.small){position:relative;isolation:isolate}
+.card:is(.primary,.small) a.button{
+  position:absolute;inset:0;z-index:5;width:auto;height:auto;max-width:none;
+  margin:0;padding:0;border:0;border-radius:inherit;background:transparent;
+  color:transparent;font-size:0;box-shadow:none;outline:0;
+}
+.card:is(.primary,.small) a.button:focus-visible{box-shadow:inset 0 0 0 2px #77daf7}
