@@ -15,3 +15,10 @@
   .project-art.project-cover{min-height:0;padding:18px}
   .project-art.project-cover .art-top{margin-bottom:14px}
 }
+
+/* Primary source repository link on project detail pages */
+.project-intro .links a.repo-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 18px;border:1px solid var(--accent);border-radius:8px;background:var(--accent);color:#fff;font-size:14px;font-weight:700;line-height:1.4;text-decoration:none;transition:box-shadow .15s ease,filter .15s ease}
+.project-intro .links a.repo-primary:hover{color:#fff;filter:brightness(.92);box-shadow:0 3px 10px rgba(0,0,0,.14)}
+.project-intro .links a.repo-primary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.project-intro .links a.repo-primary svg{width:17px;height:17px;flex:none;fill:currentColor}
+@media(max-width:650px){.project-intro .links a.repo-primary{flex-basis:100%;max-width:320px;min-height:44px}}
